@@ -5,6 +5,11 @@
     "compilerOptions": {
         "strict": true,
         "esModuleInterop": true,
+
+        // bandaid
+        // ./node_modules/ecctrl/src/EcctrlJoystick.tsx:22:11
+        // 22 | const joystickDiv: HTMLDivElement = document.querySelector("#ecctrl-joystick")
+        "strictNullChecks": false, 
         "lib": [
             "dom",
             "es2015"

@@ -11,7 +11,9 @@ export default function Dust2(props) {
   const { nodes, materials } = useGLTF('/dust2-transformed.glb')
   return (
     <group {...props} dispose={null}>
-      <directionalLight intensity={1} decay={2} position={[5, 10, 7.5]} />
+      <directionalLight intensity={1} decay={2} position={[9, 15, -17]} />
+      <directionalLight intensity={1} decay={2} position={[-20, 7, 12]} />
+      <directionalLight intensity={1} decay={2} position={[-20, 7, 12]} />
       <mesh geometry={nodes.Object_2.geometry} material={materials.material_0} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={0.013} />
       <mesh geometry={nodes.Object_3.geometry} material={materials.material_10} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={0.013} />
       <mesh geometry={nodes.Object_4.geometry} material={materials.material_11} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={0.013} />
@@ -46,6 +48,7 @@ export default function Dust2(props) {
       <mesh geometry={nodes.Object_33.geometry} material={materials.material_32} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={0.013} />
       <mesh geometry={nodes.Object_34.geometry} material={materials.material_33} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={0.013} />
       <mesh geometry={nodes.Object_35.geometry} material={materials.material_9} position={[0, 0, 0]} rotation={[-Math.PI, 0, 0]} scale={0.013} />
+      
     </group>
   )
 }
