@@ -23,17 +23,27 @@ export default function App() {
     { name: 'run', keys: ['Shift'] }
   ]
 
+  const [video] = useState(() => {
+    const vid = document.createElement("video");
+    vid.src = "./wow.mp4";
+    vid.crossOrigin = "Anonymous";
+    vid.loop = true;
+    return vid;
+  });
+
+  const tex = new THREE.VideoTexture(video);
+
   return (
-    <Canvas
+    <Canvas scene={{ background: tex }}
       // not sure how this connects back to the camera. if i remove this,
       // you have to drag the mouse while the button is held to move the camera
       onPointerDown={(e) => {
         if (e.pointerType === "mouse" && e.target instanceof HTMLElement) {
           e.target.requestPointerLock();
+          video.play();
         }
       }}>
       <Suspense>
-        <Sky sunPosition={new THREE.Vector3(100, 10, 100)} />
         <Physics debug gravity={[0, -9, 0]}>
           <KeyboardControls map={keyboardMap}>
             <Ecctrl
