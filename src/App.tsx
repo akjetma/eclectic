@@ -29,18 +29,20 @@ export default function App() {
     vid.src = "./wow.mp4";
     vid.crossOrigin = "Anonymous";
     vid.loop = true;
+    vid.playsInline = true;
     return vid;
   });
 
-  const tex = new THREE.VideoTexture(video);
+  const [tex] = useState(() => new THREE.VideoTexture(video));
 
   return (
     <Canvas scene={{ background: tex }}
             onPointerDown={(e) => {
+              console.log("pointerdown");
               if (e.pointerType === "mouse" && e.target instanceof HTMLElement) {
                 e.target.requestPointerLock();
-                video.play(); // have to wait until we have pointer lock to play video
               }
+              video.play();
             }}>
       <Suspense>
         <Physics>

@@ -3,7 +3,7 @@ import { Text3D, Center } from '@react-three/drei';
 
 export default function WelcomeMessage() {
   return (
-    <Center position={[0, 0, 5]}  /* x and y are vertical and horizontal positions with respect to the user's viewport, 
+    <Center position={[0, 0, 7]}  /* x and y are vertical and horizontal positions with respect to the user's viewport, 
                                      z is depth (size, effectively, since it's rendered on top of all other geometry) */>
       <Text3D font="/MK2font_reversed.json"  /* font is processed in reverse order to fix issues with holes in letters like 'o' and 'p',
                                                 note that this doesnt reverse the letters or anything. */
